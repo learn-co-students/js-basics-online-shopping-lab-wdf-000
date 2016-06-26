@@ -12,7 +12,7 @@ const expect = chai.expect
 
 describe('shopping', () => {
   jsdom({
-    src: fs.readFileSync(path.resolve(__dirname,  'shopping.js'), 'utf-8')
+    src: fs.readFileSync(path.resolve(__dirname, '..', 'shopping.js'), 'utf-8')
   })
 
   beforeEach(() => {

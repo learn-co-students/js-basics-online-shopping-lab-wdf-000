@@ -26,32 +26,32 @@ function viewCart(){
   }
 
   for (let i in cart){
-    var str = cart.map(i => Object.keys(i)[0] + ' at ' + i[Object.keys(i)[0]]).join(', ');
+    var str = cart.map(i => Object.keys(i)[0] + ' at $' + i[Object.keys(i)[0]]).join(', ');
     console.log(`In your cart you have ${str}.`)
   }
 }
 
 function addToCart(item){
-  var price = Math.floor(Math.random() * 101);
-  cart.push({item: price});
+  var itemObj = {}
+  itemObj[item] = Math.floor(Math.random() * 101);
+  cart.push(itemObj);
   console.log(`${item} has been added to your cart.`);
   return cart;
 }
 
 function removeFromCart(item_name){
   var index = null;
-  cart.forEach(function(v,i){ 
+  cart.forEach(function(v,i){
     if (v.hasOwnProperty(item_name))
       index = i;
   });
 
   if (index === null){
     console.log ("That item is not in your cart");
-  } else{ 
-    cart.splice(i,1);
+  } else{
+    cart.splice(index,1);
+    return cart;
   }
-  
-  return cart;
 }
 
 function placeOrder(cc){
@@ -60,5 +60,5 @@ function placeOrder(cc){
   } else {
     console.log(`Your total cost is ${total()}, which will be charged to ${cc}.`);
   }
-  cart = [];
+  setCart([]);
 }
