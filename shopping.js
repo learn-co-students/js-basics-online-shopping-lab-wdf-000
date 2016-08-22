@@ -24,7 +24,7 @@ function viewCart(){
   else {
     var temp = [];
     for(var i = 0; i < cart.length; i++){
-      var keys = Object.keys(cart[i])[0]
+      var keys = Object.keys(cart[i])
       temp.push(`${keys} at $${cart[i][keys]}`)
     }
     console.log(`In your cart, you have ${temp.join(', ')}.`)
