@@ -43,13 +43,16 @@ function viewCart() {
 }
 
 function removeFromCart(item) {
+  let itemFound = false;
   for (let i = 0, l = cart.length; i < l; i++) {
     if (cart[i].hasOwnProperty(item)) {
+      itemFound = true;
       cart.splice(i, 1);
-      return;
     }
   }
-  console.log("That item is not in your cart.");
+  if (!itemFound) {
+    console.log("That item is not in your cart.");
+  }
 }
 
 function placeOrder(creditCardNumber) {
