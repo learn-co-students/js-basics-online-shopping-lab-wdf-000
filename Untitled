@@ -1,0 +1,20 @@
+function viewCart() {
+
+  if (cart.length === 0) {
+      console.log("Your shopping cart is empty.")
+    }
+  else {
+    var itemNames = Object.keys(cart)
+    // var mealNames = Object.keys(meals)
+    // for (var i = 0, l = mealNames.length; i < l; i++) {
+    //   console.log(`I ate ${meals[mealNames[i]]} for ${mealNames[i]}!`)
+    // }
+
+
+
+    for (var i = 0, l = itemNames.length; i < l; i++) {
+      console.log(`In your cart you have ${itemNames[i]} and ${cart[itemNames[i]]}.`)
+    }
+  }
+
+}
