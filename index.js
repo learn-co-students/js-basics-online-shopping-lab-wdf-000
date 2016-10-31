@@ -51,7 +51,7 @@ function viewCart() {
    for (var i = 0; i < cart.length; i++) {
     for (var cartItem in cart[i]) {
       allItems.push(`${cartItem} at $${cart[i][cartItem]}`);
-      debugger;
+      // debugger;
      }
    }
    console.log(`In your cart, you have ${allItems.join(", ")}.`);
@@ -77,6 +77,7 @@ function removeFromCart(item) {
    var cartItem = [];
 
    for (var i = 0, l = cart.length; i < l; i++) {
+     debugger;
      if (cart[i].hasOwnProperty(item)){
        cartItem.push(item);
        cart.splice(i, 1);
