@@ -33,7 +33,9 @@ function viewCart() {
   } else {
     var output = [];
     for(var i = 0; i < cart.length; i++){
-          output.push(` ${Object.keys(cart[i])[0]} at $${cart[i][Object.keys(cart[i])[0]]}`)
+          var item = Object.keys(cart[i])[0];
+          var item_price = cart[i][item];
+          output.push(` ${item} at $${item_price}`)
     }
     console.log("In your cart, you have" + output.join(",") + ".")
   }
@@ -43,11 +45,9 @@ function viewCart() {
 function removeFromCart(item) {
   var original_size = cart.length;
   for (var i = 0; i < cart.length; i ++){
-  	for ( var items in cart[i]){
-  		if (items.includes(item)){
+  		if (Object.keys(cart[i]).includes(item)){
   		  cart.splice(i, 1);
   		}
-  	}
   }
     if (cart.length === original_size) {
       console.log("That item is not in your cart.");
