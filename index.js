@@ -53,6 +53,7 @@ function placeOrder(creditCard) {
   }
 }
 
+
 function total() {
   let t = 0;
   for (var i = 0, l = cart.length; i < l; i++) {
